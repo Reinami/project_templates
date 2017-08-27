@@ -1,4 +1,3 @@
-======================
 Cookiecutter PyPackage
 ======================
 
@@ -12,4 +11,4 @@ Cookiecutter 1.4.0 or higher)::
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/Typhon66/project_template.git
+    cookiecutter https://github.com/Typhon66/project_templates.git
