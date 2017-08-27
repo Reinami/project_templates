@@ -1,4 +1,4 @@
-{{cookiecutter.project_file_name}}
+{{cookiecutter.project_name}}
 =================================
 
 |Build Status|   |PyPI|   |PyPI version|

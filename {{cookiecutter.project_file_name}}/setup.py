@@ -1,24 +1,34 @@
+import codecs
+import os
+import re
 from setuptools import setup
+
+
+with codecs.open(os.path.join(os.path.abspath(os.path.dirname(
+        __file__)), '{{cookiecutter.project_file_name}}', '__init__.py'), 'r', 'latin1') as fp:
+    try:
+        version = re.findall(r"^__version__ = '([^']+)'\r?$",
+                             fp.read(), re.M)[0]
+    except IndexError:
+        raise RuntimeError('Unable to determine version.')
+
 setup(
-    name='sanic_crud',
-    version='0.5.2',
-    url='https://github.com/Typhon66/sanic_crud',
+    name='{{cookiecutter.project_file_name}}',
+    version=version,
+    url='http://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_file_name}}',
     license='MIT',
-    author='Typhon',
-    author_email='typhonnge@gmail.com',
-    description='A REST API framework for building CRUD APIs using Sanic and peewee',
-    packages=['sanic_crud', 'sanic_crud.resources'],
+    author='{{cookiecutter.author_name}}',
+    author_email='{{cookiecutter.author_email}}',
+    description='{{cookiecutter.project_description}}',
+    packages=['{{cookiecutter.project_file_name}}'],
     platforms='any',
     install_requires=[
-        'peewee==2.9.2',
-        'sanic==0.5.2'
+        
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    keywords='sanic api rest crud'
 )
